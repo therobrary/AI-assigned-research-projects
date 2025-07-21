@@ -141,8 +141,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 tmp/
-temp/
 
+temp/
 # Agent memory files
 agent_memory.json
 memory.json
+

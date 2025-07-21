@@ -1,0 +1,155 @@
+{
+  "rules": {
+    "code-style": {
+      "enforce-naming-conventions": true,
+      "max-line-length": 120,
+      "require-documentation": true,
+      "consistent-indentation": true,
+      "trailing-whitespace": false
+    },
+    "security": {
+      "no-hardcoded-secrets": true,
+      "validate-input": true,
+      "secure-random": true,
+      "sanitize-sql": true,
+      "check-cors-policy": true
+    },
+    "performance": {
+      "avoid-nested-loops": true,
+      "optimize-database-queries": true,
+      "cache-expensive-operations": true,
+      "minimize-dom-manipulation": true,
+      "lazy-loading": true
+    },
+    "maintainability": {
+      "max-function-length": 50,
+      "max-parameter-count": 5,
+      "avoid-deep-nesting": true,
+      "prefer-composition": true,
+      "single-responsibility": true
+    }
+  },
+  "language-rules": {
+    "javascript": {
+      "use-strict-mode": true,
+      "prefer-const": true,
+      "no-var": true,
+      "prefer-arrow-functions": true,
+      "use-template-literals": true,
+      "destructuring-assignment": true
+    },
+    "typescript": {
+      "strict-mode": true,
+      "explicit-return-types": true,
+      "no-any": true,
+      "prefer-interfaces": true,
+      "use-generics": true
+    },
+    "python": {
+      "max-line-length": 88,
+      "use-type-hints": true,
+      "follow-pep8": true,
+      "prefer-f-strings": true,
+      "use-dataclasses": true
+    },
+    "react": {
+      "use-functional-components": true,
+      "prop-types-required": true,
+      "key-prop-in-lists": true,
+      "avoid-inline-styles": true,
+      "component-naming": "PascalCase"
+    }
+  },
+  "custom-rules": [
+    {
+      "name": "require-error-handling",
+      "description": "Ensure all API calls have proper error handling",
+      "pattern": "(fetch\\(|axios\\.|http\\.|api\\.)",
+      "requirement": "try-catch block or .catch() method",
+      "severity": "error",
+      "auto-fix": false,
+      "examples": {
+        "good": "try { const response = await fetch(url); } catch (error) { /* handle error */ }",
+        "bad": "const response = await fetch(url);"
+      }
+    },
+    {
+      "name": "consistent-logging",
+      "description": "Use structured logging format instead of console.log",
+      "pattern": "console\\.log",
+      "suggestion": "Use logger.info() with structured format",
+      "severity": "warning",
+      "auto-fix": true,
+      "replacement": "logger.info"
+    },
+    {
+      "name": "component-test-coverage",
+      "description": "React components should have corresponding test files",
+      "pattern": ".*\\.component\\.(js|jsx|ts|tsx)$",
+      "requirement": "matching .test or .spec file",
+      "severity": "warning",
+      "auto-fix": false
+    },
+    {
+      "name": "env-variable-usage",
+      "description": "Environment variables should be properly validated",
+      "pattern": "process\\.env\\.",
+      "requirement": "validation and default values",
+      "severity": "error",
+      "auto-fix": false,
+      "examples": {
+        "good": "const port = process.env.PORT || 3000;",
+        "bad": "const port = process.env.PORT;"
+      }
+    },
+    {
+      "name": "database-transaction-usage",
+      "description": "Database operations should use transactions when appropriate",
+      "pattern": "(INSERT|UPDATE|DELETE).*?(INSERT|UPDATE|DELETE)",
+      "requirement": "wrap in transaction",
+      "severity": "warning",
+      "auto-fix": false
+    }
+  ],
+  "rule-exceptions": {
+    "files": [
+      "*.test.js",
+      "*.spec.js",
+      "webpack.config.js",
+      "jest.config.js"
+    ],
+    "directories": [
+      "node_modules/",
+      "dist/",
+      "build/",
+      "coverage/"
+    ],
+    "rules-to-ignore": [
+      "max-line-length",
+      "require-documentation"
+    ]
+  },
+  "severity-levels": {
+    "error": {
+      "block-commit": true,
+      "show-in-editor": true,
+      "auto-fix-available": false
+    },
+    "warning": {
+      "block-commit": false,
+      "show-in-editor": true,
+      "auto-fix-available": true
+    },
+    "info": {
+      "block-commit": false,
+      "show-in-editor": false,
+      "auto-fix-available": true
+    }
+  },
+  "integration": {
+    "pre-commit-hooks": true,
+    "ci-cd-integration": true,
+    "editor-integration": ["vscode", "intellij", "sublime"],
+    "real-time-checking": true
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "memory-config": {
+    "project-context": {
+      "enabled": true,
+      "retention-period": "30 days",
+      "max-entries": 1000,
+      "auto-cleanup": true,
+      "backup-enabled": true,
+      "categories": [
+        "code-patterns",
+        "decision-rationale", 
+        "architectural-choices",
+        "bug-resolutions",
+        "performance-optimizations",
+        "security-implementations"
+      ]
+    },
+    "coding-patterns": {
+      "enabled": true,
+      "learn-from-usage": true,
+      "suggest-similar": true,
+      "confidence-threshold": 0.8,
+      "pattern-matching": "fuzzy",
+      "update-frequency": "real-time"
+    },
+    "error-solutions": {
+      "enabled": true,
+      "track-resolutions": true,
+      "suggest-fixes": true,
+      "share-solutions": true,
+      "categorize-errors": true,
+      "success-rate-tracking": true
+    },
+    "team-knowledge": {
+      "enabled": true,
+      "shared-patterns": true,
+      "collective-learning": true,
+      "knowledge-sync": "daily",
+      "privacy-level": "team-only"
+    }
+  },
+  "knowledge-base": {
+    "common-patterns": [
+      {
+        "id": "react-component-hooks",
+        "pattern": "React component with hooks",
+        "template": "functional component with useState and useEffect",
+        "best-practices": [
+          "proper cleanup in useEffect",
+          "dependency arrays",
+          "error boundaries",
+          "memoization for performance"
+        ],
+        "example": {
+          "language": "typescript",
+          "code": "const MyComponent: React.FC<Props> = ({ data }) => {\n  const [state, setState] = useState(initialState);\n  \n  useEffect(() => {\n    // side effect\n    return () => cleanup();\n  }, [dependency]);\n  \n  return <div>{content}</div>;\n};"
+        },
+        "frequency": 85,
+        "last-used": "2024-01-15"
+      },
+      {
+        "id": "api-error-handling",
+        "pattern": "API error handling",
+        "template": "try-catch with specific error types",
+        "best-practices": [
+          "user-friendly messages",
+          "proper logging",
+          "retry logic for transient errors",
+          "graceful degradation"
+        ],
+        "example": {
+          "language": "typescript",
+          "code": "try {\n  const response = await api.call();\n  return response.data;\n} catch (error) {\n  if (error instanceof NetworkError) {\n    // handle network issues\n  } else if (error instanceof ValidationError) {\n    // handle validation issues\n  }\n  logger.error('API call failed', { error, context });\n  throw new UserFriendlyError('Something went wrong');\n}"
+        },
+        "frequency": 67,
+        "last-used": "2024-01-14"
+      },
+      {
+        "id": "database-transaction",
+        "pattern": "Database transaction wrapper",
+        "template": "transaction with proper rollback",
+        "best-practices": [
+          "atomic operations",
+          "proper error handling",
+          "resource cleanup",
+          "deadlock prevention"
+        ],
+        "example": {
+          "language": "typescript",
+          "code": "await prisma.$transaction(async (tx) => {\n  const user = await tx.user.create(userData);\n  const profile = await tx.profile.create({\n    ...profileData,\n    userId: user.id\n  });\n  return { user, profile };\n});"
+        },
+        "frequency": 42,
+        "last-used": "2024-01-13"
+      }
+    ],
+    "project-specific": {
+      "architecture": "microservices with API gateway",
+      "database-patterns": "repository pattern with services",
+      "testing-strategy": "unit tests for business logic, integration for APIs",
+      "deployment": "Docker containers with Kubernetes",
+      "monitoring": "Prometheus and Grafana",
+      "logging": "structured logging with ELK stack",
+      "security": "JWT authentication with RBAC",
+      "performance": "Redis caching and database indexing"
+    },
+    "team-decisions": [
+      {
+        "decision": "Use TypeScript for all new projects",
+        "rationale": "Better type safety and developer experience",
+        "date": "2024-01-01",
+        "impact": "high",
+        "status": "active"
+      },
+      {
+        "decision": "Migrate from REST to GraphQL for complex queries",
+        "rationale": "Reduce over-fetching and improve mobile performance",
+        "date": "2024-01-05",
+        "impact": "medium",
+        "status": "in-progress"
+      },
+      {
+        "decision": "Implement feature flags for gradual rollouts",
+        "rationale": "Reduce risk of breaking changes in production",
+        "date": "2024-01-10",
+        "impact": "high",
+        "status": "planned"
+      }
+    ],
+    "code-snippets": {
+      "authentication": {
+        "jwt-middleware": {
+          "language": "typescript",
+          "code": "const authMiddleware = (req: Request, res: Response, next: NextFunction) => {\n  const token = req.headers.authorization?.split(' ')[1];\n  if (!token) return res.status(401).json({ error: 'No token provided' });\n  \n  try {\n    const decoded = jwt.verify(token, process.env.JWT_SECRET!);\n    req.user = decoded;\n    next();\n  } catch (error) {\n    res.status(401).json({ error: 'Invalid token' });\n  }\n};",
+          "usage-count": 23,
+          "tags": ["authentication", "middleware", "jwt"]
+        }
+      },
+      "validation": {
+        "zod-schema": {
+          "language": "typescript", 
+          "code": "const UserSchema = z.object({\n  name: z.string().min(1, 'Name is required'),\n  email: z.string().email('Invalid email format'),\n  age: z.number().min(18, 'Must be at least 18')\n});\n\ntype User = z.infer<typeof UserSchema>;",
+          "usage-count": 31,
+          "tags": ["validation", "zod", "types"]
+        }
+      }
+    }
+  },
+  "learning-settings": {
+    "auto-learn": {
+      "enabled": true,
+      "learn-from-commits": true,
+      "learn-from-reviews": true,
+      "learn-from-debugging": true,
+      "pattern-recognition": true
+    },
+    "suggestion-engine": {
+      "enabled": true,
+      "proactive-suggestions": true,
+      "context-aware": true,
+      "learning-rate": "adaptive",
+      "feedback-incorporation": true
+    },
+    "privacy": {
+      "anonymize-data": true,
+      "local-storage-only": false,
+      "share-with-team": true,
+      "export-allowed": true,
+      "retention-policy": "30-days"
+    }
+  },
+  "memory-optimization": {
+    "compression": {
+      "enabled": true,
+      "algorithm": "lz4",
+      "level": "balanced"
+    },
+    "indexing": {
+      "full-text-search": true,
+      "semantic-search": true,
+      "tag-based": true,
+      "frequency-based": true
+    },
+    "cleanup": {
+      "auto-cleanup": true,
+      "cleanup-frequency": "weekly",
+      "keep-frequently-used": true,
+      "archive-old-patterns": true
+    }
+  },
+  "integration": {
+    "version-control": {
+      "git-hooks": true,
+      "commit-analysis": true,
+      "branch-context": true
+    },
+    "ide-integration": {
+      "vscode": true,
+      "intellij": true,
+      "sublime": false
+    },
+    "ci-cd": {
+      "build-context": true,
+      "test-results": true,
+      "deployment-tracking": true
+    }
+  },
+  "analytics": {
+    "usage-tracking": {
+      "pattern-usage": true,
+      "suggestion-acceptance": true,
+      "error-resolution": true,
+      "performance-metrics": true
+    },
+    "insights": {
+      "trend-analysis": true,
+      "efficiency-metrics": true,
+      "learning-progress": true,
+      "team-comparison": false
+    }
+  }
+}
