@@ -1,0 +1,53 @@
+# Requirements for Web Search Tool
+
+## Python Dependencies
+
+```bash
+pip install requests
+```
+
+## Optional Dependencies
+
+For enhanced functionality:
+
+```bash
+# For better HTML parsing
+pip install beautifulsoup4 lxml
+
+# For async operations
+pip install aiohttp
+
+# For content extraction
+pip install readability-lxml
+```
+
+## Configuration
+
+### SearxNG Instance
+
+The tool uses `https://searx.be` by default. You can configure a custom instance:
+
+```bash
+export SEARX_BASE_URL="https://your-searx-instance.com"
+```
+
+### Docling Integration (Optional)
+
+For advanced content extraction:
+
+```bash
+export DOCLING_ENDPOINT="https://your-docling-instance.com"
+```
+
+## Public SearxNG Instances
+
+Some reliable public instances:
+- https://searx.be
+- https://search.sapti.me
+- https://searx.tiekoetter.com
+
+## Self-hosted SearxNG
+
+For production use, consider hosting your own SearxNG instance:
+- [SearxNG Installation Guide](https://docs.searxng.org/)
+- [Docker Setup](https://github.com/searxng/searxng-docker)

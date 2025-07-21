@@ -1,0 +1,72 @@
+# Requirements for Template Tool
+
+## Python Dependencies
+
+The template tool uses standard Python libraries that are typically available in most OpenWebUI environments:
+
+- `requests` - HTTP client library
+- `os` - Operating system interface (built-in)
+- `json` - JSON encoder/decoder (built-in)
+- `typing` - Type hints support (built-in)
+- `logging` - Logging facility (built-in)
+- `time` - Time-related functions (built-in)
+
+## Optional Dependencies
+
+For extended functionality, you may want to install:
+
+```bash
+# For advanced HTTP handling
+pip install httpx
+
+# For HTML parsing (web scraping)
+pip install beautifulsoup4 lxml
+
+# For async operations
+pip install aiohttp
+
+# For data validation
+pip install pydantic
+
+# For configuration management
+pip install python-dotenv
+```
+
+## Environment Variables
+
+Configure these environment variables for full functionality:
+
+```bash
+# Your API key (replace with actual service)
+export MY_API_KEY="your_api_key_here"
+
+# Optional: Custom API endpoint
+export MY_API_URL="https://custom-api.example.com"
+
+# Optional: Request timeout (seconds)
+export API_TIMEOUT="30"
+
+# Optional: Enable caching
+export ENABLE_CACHING="true"
+
+# Optional: Debug mode
+export DEBUG_MODE="false"
+```
+
+## Installation
+
+1. Copy the template to your tools directory
+2. Rename files as needed
+3. Install any additional dependencies
+4. Configure environment variables
+5. Restart OpenWebUI or refresh tools list
+
+## Usage
+
+The template provides example actions that you can test:
+
+- `my_action()` - Main action with various parameter types
+- `secondary_action()` - Simple processing example
+- `get_status()` - Tool status and configuration info
+
+Replace these with your specific tool functionality.

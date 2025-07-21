@@ -1,0 +1,28 @@
+# Requirements for Weather Tool
+
+## Python Dependencies
+
+```bash
+pip install requests
+```
+
+## Environment Variables
+
+**Required:**
+```bash
+export OPENWEATHER_API_KEY="your_api_key_here"
+```
+
+## API Setup
+
+1. Sign up at [OpenWeatherMap](https://openweathermap.org/api)
+2. Subscribe to One Call API 3.0 (free tier includes 1,000 calls/day)
+3. Get your API key from the dashboard
+4. Set the environment variable
+
+## Testing
+
+Test your API key:
+```bash
+curl "https://api.openweathermap.org/data/3.0/onecall?lat=51.5074&lon=-0.1278&appid=YOUR_API_KEY"
+```
