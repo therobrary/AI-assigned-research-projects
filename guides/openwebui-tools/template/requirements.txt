@@ -1,0 +1,21 @@
+# Add your Python dependencies here
+# Example dependencies:
+
+# For HTTP requests
+aiohttp>=3.8.0
+
+# For additional async utilities (optional)
+# asyncio-extras>=1.3.0
+
+# For data processing (optional)
+# pandas>=1.5.0
+# numpy>=1.24.0
+
+# For working with dates (optional)
+# python-dateutil>=2.8.0
+
+# For JSON processing (optional)
+# ujson>=5.0.0
+
+# For environment variable management (optional)
+# python-dotenv>=1.0.0
