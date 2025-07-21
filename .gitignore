@@ -122,14 +122,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# IDE
+# IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# OS files
 .DS_Store
 .DS_Store?
 ._*
@@ -137,6 +137,11 @@ dmypy.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Temporary files
+*.tmp
+tmp/
+temp/
 
 # Agent memory files
 agent_memory.json
