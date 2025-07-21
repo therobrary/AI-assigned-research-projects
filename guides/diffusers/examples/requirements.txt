@@ -1,0 +1,41 @@
+# Hugging Face Diffusers with Flux Models - Requirements
+
+# Core dependencies
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+
+# Diffusers library and ecosystem
+diffusers[torch]>=0.30.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Optimization and acceleration
+xformers>=0.0.20  # Optional but recommended for memory efficiency
+
+# Hugging Face ecosystem
+huggingface-hub>=0.16.0
+safetensors>=0.3.0
+
+# Utilities
+matplotlib>=3.7.0  # For visualization
+tqdm>=4.65.0       # Progress bars
+requests>=2.31.0   # HTTP requests
+
+# Optional: For advanced features
+# gradio>=3.35.0           # Web UI (uncomment if needed)
+# jupyter>=1.0.0           # Notebook support (uncomment if needed)
+# wandb>=0.15.0            # Experiment tracking (uncomment if needed)
+
+# Note: Install PyTorch with appropriate CUDA version first:
+# For CUDA 11.8: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# For CUDA 12.1: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# For CPU only: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
