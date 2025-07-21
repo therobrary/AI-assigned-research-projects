@@ -1,0 +1,11 @@
+# Requirements for the Advanced AI Agent
+
+# Core dependencies
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# Optional dependencies for extended functionality
+# requests>=2.31.0  # For web search tools
+# beautifulsoup4>=4.12.0  # For web scraping
+# numpy>=1.24.0  # For numerical computations
+# pandas>=2.0.0  # For data manipulation

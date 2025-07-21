@@ -1,0 +1,11 @@
+# Required dependencies for AI Agent Template
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+
+# Optional: Add these for extended functionality
+# requests>=2.31.0      # For API integrations
+# beautifulsoup4>=4.12.0 # For web scraping
+# pandas>=2.0.0         # For data processing
