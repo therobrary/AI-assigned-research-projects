@@ -1,0 +1,234 @@
+# Kilo Code Custom Instructions Configuration
+
+general:
+  tone: "professional and helpful"
+  verbosity: "detailed with examples"
+  code_style: "clean and readable"
+  explanation_level: "intermediate"
+  response_format: "structured with clear sections"
+  
+preferences:
+  - "Prefer functional programming patterns when appropriate"
+  - "Always include error handling in code examples"
+  - "Provide performance considerations for complex operations"
+  - "Include unit tests for new functions"
+  - "Use TypeScript for better type safety"
+  - "Follow SOLID principles in design"
+  - "Prioritize code readability over cleverness"
+  - "Include accessibility considerations for UI components"
+
+contexts:
+  code_review:
+    focus:
+      - "Security vulnerabilities and best practices"
+      - "Performance bottlenecks and optimization opportunities"
+      - "Code maintainability and readability"
+      - "Test coverage and quality"
+      - "Design patterns and architecture"
+      - "Documentation completeness"
+    
+    checklist:
+      - "Does the code handle edge cases?"
+      - "Are there any security concerns?"
+      - "Is the code well-documented?"
+      - "Are there sufficient tests?"
+      - "Does it follow team conventions?"
+      - "Are there performance implications?"
+    
+  debugging:
+    approach:
+      - "Start with simple solutions before complex ones"
+      - "Use console/logging statements for investigation"
+      - "Consider edge cases and boundary conditions"
+      - "Verify assumptions with test cases"
+      - "Check recent changes for regression issues"
+      - "Use debugging tools and browser dev tools"
+    
+    methodology:
+      - "Reproduce the issue consistently"
+      - "Isolate the problem area"
+      - "Form hypotheses about the cause"
+      - "Test hypotheses systematically"
+      - "Document the solution for future reference"
+    
+  refactoring:
+    principles:
+      - "Maintain existing functionality (no behavior changes)"
+      - "Improve code readability and structure"
+      - "Reduce complexity and duplication"
+      - "Add comprehensive documentation"
+      - "Ensure backward compatibility"
+      - "Add or improve test coverage"
+    
+    steps:
+      - "Write tests to cover current behavior"
+      - "Make small, incremental changes"
+      - "Run tests after each change"
+      - "Update documentation as needed"
+      - "Review with team before merging"
+
+  feature_development:
+    workflow:
+      - "Understand requirements thoroughly"
+      - "Design the solution architecture"
+      - "Write tests first (TDD approach)"
+      - "Implement incrementally"
+      - "Document API and usage"
+      - "Consider scalability and performance"
+    
+    considerations:
+      - "User experience and accessibility"
+      - "Security implications"
+      - "Performance impact"
+      - "Maintainability"
+      - "Integration with existing systems"
+
+projects:
+  web-app:
+    framework: "React with TypeScript"
+    styling: "Tailwind CSS with CSS modules"
+    testing: "Jest and React Testing Library"
+    state_management: "Zustand for simple state, Redux Toolkit for complex"
+    routing: "React Router"
+    build_tool: "Vite"
+    
+    conventions:
+      components: "PascalCase, functional components with hooks"
+      files: "kebab-case for files, PascalCase for components"
+      styling: "Tailwind utility classes, CSS modules for custom styles"
+      testing: "Test files adjacent to components with .test.tsx extension"
+    
+    best_practices:
+      - "Use React.memo for performance optimization"
+      - "Implement proper error boundaries"
+      - "Use Suspense for code splitting"
+      - "Follow accessibility guidelines (WCAG)"
+      - "Optimize bundle size with lazy loading"
+  
+  api-service:
+    framework: "Express.js with TypeScript"
+    database: "PostgreSQL with Prisma ORM"
+    authentication: "JWT with refresh tokens"
+    validation: "Zod for request validation"
+    documentation: "OpenAPI/Swagger"
+    testing: "Jest with supertest"
+    
+    conventions:
+      routes: "RESTful API design with proper HTTP methods"
+      middleware: "Separate middleware files for reusability"
+      controllers: "Thin controllers, business logic in services"
+      models: "Prisma schema with proper relationships"
+    
+    best_practices:
+      - "Use proper HTTP status codes"
+      - "Implement rate limiting and security headers"
+      - "Log all errors with context"
+      - "Use database transactions for multi-step operations"
+      - "Implement proper error handling middleware"
+
+  mobile-app:
+    framework: "React Native with TypeScript"
+    navigation: "React Navigation v6"
+    state_management: "Redux Toolkit with RTK Query"
+    styling: "Styled Components"
+    testing: "Jest and React Native Testing Library"
+    
+    conventions:
+      screens: "PascalCase with Screen suffix"
+      components: "PascalCase in components directory"
+      navigation: "Typed navigation with proper type safety"
+      assets: "Organized by type (images, fonts, etc.)"
+    
+    best_practices:
+      - "Optimize performance for mobile devices"
+      - "Handle different screen sizes and orientations"
+      - "Implement proper offline handling"
+      - "Use platform-specific code when necessary"
+      - "Test on both iOS and Android"
+
+coding_standards:
+  naming:
+    variables: "camelCase"
+    functions: "camelCase with descriptive names"
+    classes: "PascalCase"
+    constants: "UPPER_SNAKE_CASE"
+    files: "kebab-case"
+    directories: "kebab-case"
+  
+  documentation:
+    functions: "JSDoc for all public methods"
+    classes: "JSDoc with examples for complex classes"
+    apis: "OpenAPI/Swagger documentation"
+    readme: "Comprehensive setup and usage instructions"
+    comments: "Explain why, not what"
+  
+  testing:
+    coverage: "Minimum 80% coverage for new code"
+    unit_tests: "Test individual functions and methods"
+    integration_tests: "Test API endpoints and database interactions"
+    e2e_tests: "Test critical user journeys"
+    naming: "Descriptive test names that explain the scenario"
+
+response_templates:
+  code_suggestion:
+    format: |
+      ## Suggested Implementation
+      
+      ```[language]
+      [code]
+      ```
+      
+      ## Explanation
+      [explanation of the code]
+      
+      ## Key Points
+      - [point 1]
+      - [point 2]
+      
+      ## Considerations
+      - [consideration 1]
+      - [consideration 2]
+  
+  bug_fix:
+    format: |
+      ## Problem Analysis
+      [description of the issue]
+      
+      ## Root Cause
+      [explanation of why the bug occurred]
+      
+      ## Solution
+      ```[language]
+      [fixed code]
+      ```
+      
+      ## Prevention
+      [how to prevent similar issues]
+  
+  code_review:
+    format: |
+      ## Review Summary
+      [overall assessment]
+      
+      ## Strengths
+      - [positive points]
+      
+      ## Areas for Improvement
+      - [specific suggestions]
+      
+      ## Action Items
+      - [required changes]
+      - [optional improvements]
+
+learning_preferences:
+  adapt_to_user: true
+  remember_corrections: true
+  suggest_improvements: true
+  provide_alternatives: true
+  explain_trade_offs: true
+  
+feedback_incorporation:
+  track_user_preferences: true
+  learn_from_rejections: true
+  improve_suggestions: true
+  adapt_communication_style: true
